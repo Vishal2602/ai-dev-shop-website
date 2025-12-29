@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Zap, CheckCircle2, Command, Sparkles, Quote, MessageSquare, Database } from 'lucide-react';
+import { Github, Zap, CheckCircle2, Command, Sparkles, Quote, MessageSquare, Database, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -416,15 +416,23 @@ export default function App() {
                                 initial={{ opacity: 0, scale: 0.95, y: 30 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95, y: 30 }}
-                                className="pointer-events-auto bg-white/95 backdrop-blur-2xl overflow-hidden rounded-[32px] shadow-2xl max-w-5xl w-full h-auto min-h-[500px] md:h-[600px] max-h-[85vh] flex overflow-y-auto md:overflow-y-hidden shadow-purple-500/20"
+                                className="relative pointer-events-auto bg-white/95 backdrop-blur-2xl overflow-hidden rounded-[32px] shadow-2xl max-w-5xl w-full h-auto min-h-[500px] md:h-[600px] max-h-[85vh] flex flex-col md:flex-row overflow-y-auto md:overflow-y-hidden shadow-purple-500/20"
                             >
+                                {/* Close Button */}
+                                <button
+                                    onClick={() => setIsModalOpen(false)}
+                                    className="absolute top-4 right-4 z-50 p-2 bg-slate-100/50 hover:bg-slate-200 rounded-full text-slate-500 hover:text-slate-900 transition-colors"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+
                                 {/* COLUMN 1: Image of VISHAL (Me) */}
-                                <div className="w-1/3 relative hidden md:block overflow-hidden min-h-[600px]">
+                                <div className="w-full h-64 md:w-1/3 md:h-auto relative overflow-hidden flex-shrink-0">
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-10" />
                                     <img
                                         src="/assets/mehalf.png"
                                         alt="Vishal Sunil Kumar"
-                                        className="w-full h-full object-cover object-center scale-105 hover:scale-110 transition-transform duration-700 brightness-110 contrast-110"
+                                        className="w-full h-full object-cover object-center md:object-center object-[50%_20%] scale-105 hover:scale-110 transition-transform duration-700 brightness-110 contrast-110"
                                     />
                                     <div className="absolute bottom-6 left-6 z-20">
                                         <div className="text-white text-xs font-mono tracking-widest opacity-70 mb-1">ARCHITECT_ID: VISHAL</div>

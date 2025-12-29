@@ -362,8 +362,8 @@ export default function App() {
             {/* THE DOCK (Bottom Navigation) */}
             {/* Dock (Hidden in Override Mode) */}
             {!isSystemOverride && (
-                <div className="relative w-full z-50 pb-8 flex justify-center">
-                    <div className="bg-white/60 backdrop-blur-xl border border-white/40 shadow-2xl shadow-slate-200/50 rounded-full px-6 py-3 flex items-end gap-2 mx-4 max-w-full overflow-x-auto selection-none">
+                <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-50 flex justify-center">
+                    <div className="bg-white/60 backdrop-blur-xl border border-white/40 shadow-2xl shadow-slate-200/50 rounded-full px-4 py-2 md:px-5 md:py-2 flex items-end gap-1 md:gap-2 max-w-[90vw] overflow-x-auto selection-none">
                         {agents.map((agent, index) => {
                             const isActive = index === activeIndex;
 
@@ -381,7 +381,7 @@ export default function App() {
                                     {/* Agent Icon */}
                                     <div className={cn(
                                         "relative transition-all duration-300 ease-spring",
-                                        isActive ? "w-16 h-16 -translate-y-2 scale-110" : "w-12 h-12 opacity-60 hover:opacity-100 hover:scale-110 hover:-translate-y-1",
+                                        isActive ? "w-12 h-12 md:w-14 md:h-14 -translate-y-2 scale-110" : "w-10 h-10 md:w-11 md:h-11 opacity-60 hover:opacity-100 hover:scale-110 hover:-translate-y-1",
                                     )}>
                                         <img
                                             src={agent.image}
